@@ -23,8 +23,8 @@ namespace MVC7days.Controllers
         {
             Customer c = new Customer
             {
-                CustomerName = "rtetertret",
-                Address = "sdsdsdsd"
+                CustomerName = "Marjan",
+                Address = "Krushevska R. No.81"
             };
 
             return c;
