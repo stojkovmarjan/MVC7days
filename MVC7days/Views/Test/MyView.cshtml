@@ -1,0 +1,21 @@
+﻿@model MVC7days.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MyView</title>
+</head>
+<body>
+    <div> 
+        <b>Employee Data</b><br/>
+        Employee name: @Model.FirstName @Model.LastName <br />
+        Employee Salary: @Model.Salary
+    </div>
+</body>
+</html>
