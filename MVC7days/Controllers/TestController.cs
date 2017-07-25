@@ -24,6 +24,8 @@ namespace MVC7days.Controllers
                 Salary = 20000
             };
 
+            ViewBag.Employee = emp; //.Employee si go stavas sam
+
             return View("MyView", emp);
         }
         public string GetString()
