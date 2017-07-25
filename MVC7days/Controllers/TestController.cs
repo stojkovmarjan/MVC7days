@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC7days.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +15,19 @@ namespace MVC7days.Controllers
             return View();
         }
         */
+        public ActionResult GetView()
+        {
+            Employee emp = new Employee
+            {
+                FirstName = "Maryan",
+                LastName = "Stoykov",
+                Salary = 20000
+            };
 
+            ViewData["Employee"] = emp;
+
+            return View("MyView");
+        }
         public string GetString()
         {
             return "Hallo World is old now. It's time for wassup bro";
