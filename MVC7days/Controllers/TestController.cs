@@ -17,28 +17,37 @@ namespace MVC7days.Controllers
         }
         */
         public ActionResult GetView()
-        {
-            Employee emp = new Employee
+        {      
+            EmployeeBusinessLayer empBusinessLayer = new EmployeeBusinessLayer();
+            EmployeeListViewModel empListView = new EmployeeListViewModel();
+            
+            List<Employee> employeesList = empBusinessLayer.GetEmployees();
+            List<EmployeeViewModel> empViewModelList = new List<EmployeeViewModel>();
+            foreach(Employee emp in employeesList)
             {
-                FirstName = "Maryan",
-                LastName = "Stoykov",
-                Salary = 19000
-            };
+                EmployeeViewModel empView = new EmployeeViewModel();
+                empView.EmployeeName = emp.FirstName + " " + emp.LastName;
+                empView.Salary = emp.Salary.ToString("C");
 
-            EmployeeViewModel empView = new EmployeeViewModel();
+                if (emp.Salary >= 20000)
+                {
+                    empView.SalaryColor = "red";
+                }
+                 else
+                {
+                    empView.SalaryColor = "green";
+                }
 
-            empView.EmployeeName = emp.FirstName + " " + emp.LastName;
-            empView.Salary = emp.Salary.ToString("C");
-            if (emp.Salary >= 20000)
-            {
-                empView.SalaryColor = "red";
+                //empListView.Employees.Add(empView);
+                empViewModelList.Add(empView);
             }
-                else empView.SalaryColor = "green";
 
-            empView.UserName = "Admin";
+            empListView.Employees = empViewModelList;
+            empListView.UserName = "Admin";
 
-            return View("MyView",empView);
+            return View("MyView",empListView);
         }
+        
         public string GetString()
         {
             return "Hallo World is old now. It's time for wassup bro";
