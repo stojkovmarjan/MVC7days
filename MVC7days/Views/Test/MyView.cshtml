@@ -1,4 +1,5 @@
-﻿@model MVC7days.Models.Employee
+﻿@using MVC7days.ViewModels
+@model EmployeeViewModel
 
 @{
     Layout = null;
@@ -13,9 +14,14 @@
 </head>
 <body>
     <div> 
+        Hallo @Model.UserName<br/>
+        ------------------------------<br />
         <b>Employee Data</b><br/>
-        Employee name: @Model.FirstName @Model.LastName <br />
-        Employee Salary: @Model.Salary
+        Employee name: @Model.EmployeeName <br />
+        Employee Salary:
+        <span style="background-color: @Model.SalaryColor">
+        @Model.Salary
+        </span>
     </div>
 </body>
 </html>

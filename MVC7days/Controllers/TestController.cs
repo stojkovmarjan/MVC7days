@@ -1,4 +1,5 @@
 ﻿using MVC7days.Models;
+using MVC7days.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,22 @@ namespace MVC7days.Controllers
             {
                 FirstName = "Maryan",
                 LastName = "Stoykov",
-                Salary = 20000
+                Salary = 19000
             };
 
-            return View("MyView",emp);
+            EmployeeViewModel empView = new EmployeeViewModel();
+
+            empView.EmployeeName = emp.FirstName + " " + emp.LastName;
+            empView.Salary = emp.Salary.ToString("C");
+            if (emp.Salary >= 20000)
+            {
+                empView.SalaryColor = "red";
+            }
+                else empView.SalaryColor = "green";
+
+            empView.UserName = "Admin";
+
+            return View("MyView",empView);
         }
         public string GetString()
         {
