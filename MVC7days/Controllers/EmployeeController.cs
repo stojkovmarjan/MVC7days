@@ -42,6 +42,9 @@ namespace MVC7days.Controllers
             return View("Index",empListView);
         }
         
-              
+         public ActionResult AddNew()
+        {
+            return View("CreateEmployee");
+        }     
     }
 }
