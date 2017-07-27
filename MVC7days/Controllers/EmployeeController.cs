@@ -45,6 +45,11 @@ namespace MVC7days.Controllers
          public ActionResult AddNew()
         {
             return View("CreateEmployee");
-        }     
+        }   
+        
+        public string SaveEmployee(Employee e)
+        {
+            return e.FirstName + "|" + e.LastName + "|" + e.Salary;
+        }
     }
 }
