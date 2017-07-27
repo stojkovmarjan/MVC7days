@@ -10,12 +10,7 @@ namespace MVC7days.Controllers
 {
     public class EmployeeController : Controller
     {
-        /* GET: Test
-        public ActionResult Index()
-        {
-            return View();
-        }
-        */
+   
         public ActionResult Index()
         {      
             EmployeeBusinessLayer empBusinessLayer = new EmployeeBusinessLayer();
