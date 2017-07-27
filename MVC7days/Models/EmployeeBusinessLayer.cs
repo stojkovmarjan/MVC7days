@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC7days.DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,35 +10,8 @@ namespace MVC7days.Models
     {
         public List<Employee> GetEmployees()
         {
-            List<Employee> employees = new List<Employee>()
-            {
-                new Employee
-                {
-                    FirstName = "Maryan",
-                    LastName = "Stoykov",
-                    Salary = 19000
-                },
-                new Employee
-                {
-                    FirstName = "Petko",
-                    LastName = "Trayanov",
-                    Salary = 17000
-                },
-                new Employee
-                {
-                    FirstName = "Roger",
-                    LastName = "Moore",
-                    Salary = 29000
-                },
-                new Employee
-                {
-                    FirstName = "Bob",
-                    LastName = "Silent",
-                    Salary = 12000
-                }
-        };
-
-            return employees;
+            Mvc5in7daysDB mvc5In7DAYS = new Mvc5in7daysDB();
+            return mvc5In7DAYS.Employees.ToList();
         }
         
 
