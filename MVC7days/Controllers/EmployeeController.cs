@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC7days.Controllers
 {
-    public class TestController : Controller
+    public class EmployeeController : Controller
     {
         /* GET: Test
         public ActionResult Index()
@@ -16,7 +16,7 @@ namespace MVC7days.Controllers
             return View();
         }
         */
-        public ActionResult GetView()
+        public ActionResult Index()
         {      
             EmployeeBusinessLayer empBusinessLayer = new EmployeeBusinessLayer();
             EmployeeListViewModel empListView = new EmployeeListViewModel();
@@ -43,15 +43,10 @@ namespace MVC7days.Controllers
             }
 
             empListView.Employees = empViewModelList;
-            empListView.UserName = "Admin";
-
-            return View("MyView",empListView);
+            
+            return View("Index",empListView);
         }
         
-        public string GetString()
-        {
-            return "Hallo World is old now. It's time for wassup bro";
-        }
-        
+              
     }
 }
