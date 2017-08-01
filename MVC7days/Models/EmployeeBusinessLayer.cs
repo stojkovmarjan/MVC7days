@@ -14,6 +14,12 @@ namespace MVC7days.Models
             return mvc5In7DAYS.Employees.ToList();
         }
         
-
+        public Employee SaveEmployee(Employee e)
+        {
+            Mvc5in7daysDB mvc5in7days = new Mvc5in7daysDB();
+            mvc5in7days.Employees.Add(e);
+            mvc5in7days.SaveChanges();
+            return e;
+        }
     }
 }
