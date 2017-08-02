@@ -10,7 +10,9 @@ namespace MVC7days.Models
     {
         [Key]
         public int EmployeeId { get; set; }
+        [Required(ErrorMessage ="Enter First Name")]
         public string FirstName { get; set; }
+        [StringLength(12,ErrorMessage ="Last Name length should not be greater than 12")]
         public string LastName { get; set; }
         public int Salary { get; set; }
     }

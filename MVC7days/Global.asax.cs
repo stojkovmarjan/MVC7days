@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MVC7days.DataAccessLayer;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,9 @@ namespace MVC7days
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //se dodava za da ja brise i rekreira bazata sekojpat
+            //koga se menuva modelot
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Mvc5in7daysDB>());
         }
     }
 }

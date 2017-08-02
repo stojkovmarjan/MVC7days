@@ -52,10 +52,16 @@ namespace MVC7days.Controllers
             switch (BtnSubmit)
             {
                 case "Save Employee":
-                    //return Content(e.FirstName + "|" + e.LastName + "|" + e.Salary);
-                    EmployeeBusinessLayer empBLayer = new EmployeeBusinessLayer();
-                    empBLayer.SaveEmployee(e);
-                    return RedirectToAction("Index");
+                   if (ModelState.IsValid)
+                    {
+                        EmployeeBusinessLayer empBLayer = new EmployeeBusinessLayer();
+                        empBLayer.SaveEmployee(e);
+                        return RedirectToAction("Index");
+                    } else
+                    {
+                        return View("CreateEmployee");
+                    }
+                 
                 case "Cancel":
                     return RedirectToAction("Index");
             }
