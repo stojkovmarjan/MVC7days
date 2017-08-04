@@ -18,7 +18,7 @@ namespace MVC7days
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //se dodava za da ja brise i rekreira bazata sekojpat
+            //se dodava za da ja rekreira bazata sekojpat
             //koga se menuva modelot
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Mvc5in7daysDB>());
         }
